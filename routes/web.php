@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Auth\RegisterController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -38,3 +39,7 @@ Route::get('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
+
+
+
+
