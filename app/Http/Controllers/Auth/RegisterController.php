@@ -41,7 +41,6 @@ class RegisterController extends Controller
 
     public function register(Request $request){
         if($request->isMethod('post')){
-
             //バリデーション処理
         $request->validate([
             'username' => 'required|min:2|max:12',
@@ -60,8 +59,10 @@ class RegisterController extends Controller
                 'mail' => $mail,
                 'password' => bcrypt($password),
             ]);
+                //セッション
+        $request->session()->put('username',$username);
+        return redirect('added');//->with('username',$username);
 
-            return redirect('added');
         }
         return view('auth.register');
     }
