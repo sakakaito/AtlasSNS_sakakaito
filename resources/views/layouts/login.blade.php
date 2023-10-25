@@ -1,3 +1,9 @@
+
+<?php
+//header('Location:/top');
+//exit();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,16 +28,20 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
+        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+                <div id="accordion" class="accordion-container">
+                     <p>{{ Auth::user()->username }}さん</p>
+                     <div  class="accordion-title js-accordion-title"></div>
+                      <div class="accordion-content">
+                       <ul>
+                         <li><a href="/top">ホーム</a></li>
+                         <li><a href="/profile">プロフィール</a></li>
+                         <li><a href="/logout">ログアウト</a></li>
+                       </ul>
+                      </div>
+                      <div class="icon"><img src="images/icon1.png"></div>
+                </div>
             </div>
         </div>
     </header>
@@ -58,7 +68,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ asset('/js/script.js')}}"></script>
 </body>
 </html>

@@ -7,6 +7,49 @@ body{
 header{
     background:#186AC9;
 }
+/* accordion menu */
+.accordion-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    border-top: none;
+    outline: 0;
+    width: 100%;
+    cursor: pointer;
+}
+.accordion-container .accordion-title {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+.accordion-title{
+    position: relative;
+}
+.accordion-title:after{
+    border-right: solid 4px #000;
+    border-bottom: solid 4px #000;
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(135deg);
+}
+.accordion-title.open::after{
+    transform: rotate(-45deg);
+    top: 45%;
+}
+.accordion-content{
+    display: none;
+    padding-left: 2.3125em;
+}
 
 /* main content */
 #row{
