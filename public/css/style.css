@@ -19,7 +19,7 @@ header{
 }
 .accordion-container .accordion-title {
     display: block;
-    position: relative;
+    position: absolute;
     width: 20px;
     height: 10px;
     margin: 0 10px;
@@ -28,6 +28,7 @@ header{
 }
 .accordion-title{
     position: relative;
+    right: 60px;
 }
 .accordion-title:after{
     border-right: solid 4px #000;
@@ -49,6 +50,7 @@ header{
 .accordion-content{
     display: none;
     padding-left: 2.3125em;
+    transform: translateY(60%);
 }
 
 /* main content */

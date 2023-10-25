@@ -12,6 +12,7 @@
 */
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use APP\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -48,6 +49,8 @@ Route::post('/follow-list','PostsController@index');
 
 Route::get('/follower-list','PostsController@index')->middleware('auth');
 Route::post('/follower-list','PostsController@index');
+
+Route::get('/logout','Auth\LoginController@logout');//ログアウト
 
 
 //ユーザー情報のアクセス制限（ミドルウェア）
