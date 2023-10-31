@@ -15,6 +15,7 @@ use App\Http\Controllers\Auth\LoginController;
 use APP\Http\Controllers\HomeController;
 use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostsController;
 //use APP\Http\Controllers\PostsController;
 
 // Route::get('/', function () {
@@ -57,8 +58,8 @@ Route::get('/follow-list','FollowsController@followList')->name('follows.followL
 Route::get('/follower-list','FollowsController@followerList')->name('follows.followerList')->middleware('auth');
 
 //投稿機能
-Route::get('/post','PostsController@index')->name('post.index');
-Route::post('/post','PostsController@store')->name('post.store');
-
+Route::get('/post','PostsController@index')->name('posts.index')->middleware('auth');
+Route::get('/post','PostsController@create')->name('posts.create')->middleware('auth');
+Route::post('/post','PostsController@store')->name('posts.store');
 
 
