@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    //リレーション設定（ユーザーは複数の投稿を持つ可能性がある）
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }

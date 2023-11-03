@@ -58,8 +58,11 @@ Route::get('/follow-list','FollowsController@followList')->name('follows.followL
 Route::get('/follower-list','FollowsController@followerList')->name('follows.followerList')->middleware('auth');
 
 //投稿機能
-Route::get('/post','PostsController@index')->name('posts.index')->middleware('auth');
+Route::get('/post','PostsController@index')->name('posts.index')->middleware('auth');//投稿データ表示用ルート設定
 Route::get('/post','PostsController@create')->name('posts.create')->middleware('auth');
-Route::post('/post','PostsController@store')->name('posts.store');
+Route::post('/post','PostsController@store')->name('posts.store');//投稿データ保存用ルート設定
 
+//編集機能
+Route::get('/post/{post}/edit','PostsController@edit')->name('posts.edit');//編集用のルート設定
+Route::post('/post/{post}/update','PostsController@update')->name('posts.update');//更新用のルート設定
 

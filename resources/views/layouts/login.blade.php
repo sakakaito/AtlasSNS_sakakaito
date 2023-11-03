@@ -1,8 +1,5 @@
 
-<?php
-//header('Location:/top');
-//exit();
-?>
+
 
 <!DOCTYPE html>
 <html>
