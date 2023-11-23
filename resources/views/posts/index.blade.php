@@ -16,23 +16,27 @@
 <!-- 一覧表示 -->
 <div>
 @foreach($posts as $post)
-<div>
+<div class="list-area">
     <tr>
         <td><img src="{{ $post->user->images}}" alt=""></td>
         <td>{{ $post->user->username}}</td>
         <td>{{ $post->post}}</td>
         <td>{{ $post->created_at}}</td>
         <td>
+            <div class="edit-button-area">
             <!-- <a href="{{route('posts.edit',$post->id)}}"  method="post"> -->
-            <button type='submit' class="edit-button js-edit-button"><img src="images/edit.png" alt="編集"></button>
-        <!-- </a> -->
-    </td>
-        <td><button type='submit'><img src="images/trash.png" alt="削除"></button></td>
+            <button type='submit' class="edit-button js-edit-button"><img src="images/edit.png" class="edit-image" alt="編集"></button>
+            <!-- </a> -->
+            </div>
+        </td>
+        <td>
+            <button type='submit' class="delete-button js-delete-button"><img src="images/trash.png" class="trash-image" alt="削除"></button>
+        </td>
     </tr>
 </div>
 
 @endforeach
-<!-- モーダルウィンドウ画面 -->
+<!-- モーダルウィンドウ画面 (編集）-->
 <div class="layer js-modal">
  <div class="modal">
   <div class="modal_inner">
@@ -47,6 +51,14 @@
    </div>
   </div>
  </div>
+</div>
+<!-- モーダルウィンドウ画面（削除） -->
+<div class="modal-delete js-modal-delete">
+    <div class="modal-delete-content">
+        <p>この投稿を削除します。よろしいでしょうか？</p>
+        <button type="submit">OK</button>
+        <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
+    </div>
 </div>
 </div>
 

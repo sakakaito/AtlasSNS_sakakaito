@@ -66,3 +66,5 @@ Route::post('/post','PostsController@store')->name('posts.store');//投稿デー
 Route::get('/post/{post}/edit','PostsController@edit')->name('posts.edit');//編集用のルート設定
 Route::post('/post/{post}/update','PostsController@update')->name('posts.update');//更新用のルート設定
 
+//削除機能
+

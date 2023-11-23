@@ -66,6 +66,18 @@ header{
     border-left: 1px solid #727272;
 }
 
+/* 一覧表示 */
+.list-area{
+    display: flex;
+    border-bottom: solid #ddd;
+}
+.edit-image{
+    width: 50px;
+}
+.trash-image{
+    width: 50px;
+}
+
 /* modal area */
 .layer{
     background: rgba(0,0,0,.2);
@@ -120,4 +132,38 @@ header{
  }
  .edit-text {
     width: 100%;
+ }
+ /* modal-delete-area */
+.modal-delete{
+    background: rgba(0,0,0,.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.5s linear, visibility 0.5s linear, z-index 0.5s linear;
+}
+.modal-delete-content{
+    background-color: #fff;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    height: 100px;
+    min-width: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .5s linear, opacity .5s linear;
+}
+.modal-delete.open{
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+ }
+ .modal-delete.open .modal-delete-content{
+    opacity: 1;
+    visibility: visible;
  }
