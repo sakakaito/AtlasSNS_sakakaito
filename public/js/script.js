@@ -14,8 +14,8 @@ modalButton.forEach(function(modalButton){
     
     modalButton.addEventListener('click',() =>{
         modal.classList.add('open');
-        const postDate = document.getElementById('postDate');
-        const modalPost = document.querySelector(`[data-post="{{ $post->post}}"]`);
+        // const postDate = document.getElementById('postDate');
+        const modalPost = document.querySelector();
         console.log(modalPost);
         // const modalPost = modalButton.dateset.post;
         // console.log(modalPost);
