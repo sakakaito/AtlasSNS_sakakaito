@@ -11,17 +11,13 @@ const modalButton = document.querySelectorAll('.js-edit-button');
 
 
 modalButton.forEach(function(modalButton){
-    
     modalButton.addEventListener('click',() =>{
         modal.classList.add('open');
-        // const postDate = document.getElementById('postDate');
-        const modalPost = document.querySelector();
+        const modalPost = modalButton.dataset.post;
         console.log(modalPost);
-        // const modalPost = modalButton.dateset.post;
-        // console.log(modalPost);
-        // const inputText = document.getElementById('inputText');
-        // //valueに要素を追加
-        // inputText.value = modalPost;
+        const inputText = document.getElementById('inputText');
+        //valueに要素を追加
+        inputText.value = modalPost;
 
     });
 });
