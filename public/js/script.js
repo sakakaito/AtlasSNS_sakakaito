@@ -11,15 +11,25 @@ const modalButton = document.querySelectorAll('.js-edit-button');
 
 
 modalButton.forEach(function(modalButton){
-
+    
     modalButton.addEventListener('click',() =>{
         modal.classList.add('open');
+        const postDate = document.getElementById('postDate');
+        const modalPost = document.querySelector(`[data-post="{{ $post->post}}"]`);
+        console.log(modalPost);
+        // const modalPost = modalButton.dateset.post;
+        // console.log(modalPost);
+        // const inputText = document.getElementById('inputText');
+        // //valueに要素を追加
+        // inputText.value = modalPost;
+
     });
 });
 //背景以外を押したら処理を停止
 $('.modal_content').on('click',e =>{
     e.stopPropagation();
 });
+
 //モーダル領域をクリックでフェードアウトさせる
 modal.addEventListener('click',()=>{
     modal.classList.remove('open');
@@ -74,6 +84,7 @@ deleteModal.forEach(function(deleteModal){
 $('.modal-delete-content').on('click',e =>{
     e.stopPropagation();
 });
+
 
 
 

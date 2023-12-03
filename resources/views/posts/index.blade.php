@@ -24,9 +24,7 @@
         <td>{{ $post->created_at}}</td>
         <td>
             <div class="edit-button-area">
-            <!-- <a href="{{route('posts.edit',$post->id)}}"  method="post"> -->
-            <button type='submit' class="edit-button js-edit-button"><img src="images/edit.png" class="edit-image" alt="編集"></button>
-            <!-- </a> -->
+            <button type='submit' class="edit-button js-edit-button" id="postDate" data-post="{{ $post->post}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
             </div>
         </td>
         <td>
@@ -41,11 +39,11 @@
  <div class="modal">
   <div class="modal_inner">
    <div class="modal_content">
-    <form method="post" action="{{route('posts.update',$post->id)}}">
+    <form method="post" action="{{route('posts.update', $post)}}"><!--$postで編集対象を特定-->
  @csrf
      <div class="edit-area">
-      <textarea class="edit-text" name="edit-text" id="" cols="30" rows="10" value=""></textarea>
-      <button type='submit'><img src="images/edit.png" alt=""></button>
+      <textarea class="edit-text js-modal-text" name="edit-text" id="inputText" cols="30" rows="10" value=""></textarea>
+            <button type='submit'><img src="images/edit.png" alt=""></button>
      </div>
     </form>
    </div>

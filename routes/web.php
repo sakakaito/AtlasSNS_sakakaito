@@ -63,7 +63,7 @@ Route::get('/post','PostsController@create')->name('posts.create')->middleware('
 Route::post('/post','PostsController@store')->name('posts.store');//投稿データ保存用ルート設定
 
 //編集機能
-Route::get('/post/{post}/edit','PostsController@edit')->name('posts.edit');//編集用のルート設定
+Route::get('/post/{post}/update','PostsController@update')->name('posts.edit');  //編集用のルート設定
 Route::post('/post/{post}/update','PostsController@update')->name('posts.update');//更新用のルート設定
 
 //削除機能

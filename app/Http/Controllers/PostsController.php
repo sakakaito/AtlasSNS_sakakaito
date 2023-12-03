@@ -43,27 +43,24 @@ class PostsController extends Controller
 
     }
     //編集機能
-    public function edit($post){
-         $post = Post::where('post',$post)->first();//first=たくさん取得されるデータの中から最初のものだけが取得される
-         return view('posts.edit',['post'=>$post]);
-    }
-    // public function update(Request $request, Post $post){
-    //      $id = Auth::id();
-    //      $request->validate([
-    //          'post' => 'required|min:1|max:150',
-    //      ]);
-    //      $post->update();
-    //      return back();
-    //  }
-    public function update(Request $request){
+    public function update(Request $request, $id){
+        $id = Auth::id();//ログイン中のユーザーIDを取得
         $id = $request->input('id');//name属性がidで指定されているフォームの値を変数で取得
-        $post = $request->input('post');//name属性がpostで指定されているフォームの値を変数で取得
+        $edit = $request->input('edit-text');//name属性がedit-textで指定されているフォームの値を変数で取得
 
         Post::where('id',$id)->update([//Postsテーブルのidカラムがフォームから持ってきた$id変数の値と一致するレコードを選択する処理
-            'post' => $post//フォームから持ってきた$post変数の値に更新
+            'post' => $edit //フォームから持ってきた$edit変数の値に更新
         ]);
         return back();
     }
+    // public function update(Request $request,Post $post){
+    //     $request->validate([
+    //         'post' => 'required|min:1|max:150',
+    //     ]);
+    //     $post=$request->input('edit-text');
+    //     $post->save();
+    //     return back();
+    // }
     // 削除機能
 
 }
