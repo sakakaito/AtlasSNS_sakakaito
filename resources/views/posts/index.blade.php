@@ -21,10 +21,10 @@
         <td><img src="{{ $post->user->images}}" alt=""></td>
         <td>{{ $post->user->username}}</td>
         <td>{{ $post->post}}</td>
-        <td>{{ $post->created_at}}</td>
+        <td>{{ $post->updated_at}}</td>
         <td>
             <div class="edit-button-area">
-            <button type='submit' class="edit-button js-edit-button" id="postDate" data-post="{{ $post->post}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
+            <button type='submit' class="edit-button js-edit-button" id="postDate" data-post="{{ $post->post}}" data-id="{{$post->id}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
             </div>
         </td>
         <td>
@@ -39,15 +39,15 @@
  <div class="modal">
   <div class="modal_inner">
    <div class="modal_content">
-    <form method="post" action="{{route('posts.update', $post)}}"><!--$postで編集対象を特定-->
+    <form method="post" action="{{route('posts.update')}}">
  @csrf
      <div class="edit-area">
-      <textarea class="edit-text js-modal-text" name="edit-text" id="inputText" cols="30" rows="10" value=""></textarea>
+      <textarea class="edit-text js-modal-text" name="post" id="inputText" cols="30" rows="10" value=""></textarea>
+      <input class="" type="hidden" id="inputId" value="" name="textId">
             <button type='submit'><img src="images/edit.png" alt=""></button>
      </div>
     </form>
    </div>
-  </div>
  </div>
 </div>
 <!-- モーダルウィンドウ画面（削除） -->

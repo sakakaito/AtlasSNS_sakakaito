@@ -14,10 +14,13 @@ modalButton.forEach(function(modalButton){
     modalButton.addEventListener('click',() =>{
         modal.classList.add('open');
         const modalPost = modalButton.dataset.post;
-        console.log(modalPost);
+        const modalPostId = modalButton.dataset.id;                 modalButton.dataset.id;
+        console.log(modalPostId);
         const inputText = document.getElementById('inputText');
         //valueに要素を追加
         inputText.value = modalPost;
+        const inputId =document.getElementById('inputId');
+        inputId.value = modalPostId;
 
     });
 });
