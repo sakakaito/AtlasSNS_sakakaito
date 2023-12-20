@@ -53,7 +53,7 @@ class PostsController extends Controller
         // dd($id);
         $post = $request->input('post');
         $id = $request->input('textId');
-        dd($id);
+        // dd($id);
         Post::where('id',$id)->update([
             'post' => $post
         ]);
@@ -61,5 +61,11 @@ class PostsController extends Controller
         return back();
     }
     // 削除機能
+    public function delete(Request $request){
+        // dd($id);
+        $id = $request->input('deleteId');
+        Post::where('id',$id)->delete();
+        return back();
+    }
 
 }

@@ -14,7 +14,7 @@ modalButton.forEach(function(modalButton){
     modalButton.addEventListener('click',() =>{
         modal.classList.add('open');
         const modalPost = modalButton.dataset.post;
-        const modalPostId = modalButton.dataset.id;                 modalButton.dataset.id;
+        const modalPostId = modalButton.dataset.id;
         console.log(modalPostId);
         const inputText = document.getElementById('inputText');
         //valueに要素を追加
@@ -69,6 +69,10 @@ deleteModal.forEach(function(deleteModal){
 
     deleteModal.addEventListener('click',() =>{
         buttonOpen.classList.add('open');
+        const deleteId = deleteModal.dataset.id;
+        console.log(deleteId);
+        const inputDeleteId = document.getElementById('inputDeleteId');
+        inputDeleteId.value = deleteId;
     });
 });
 //キャンセルボタンを押したらjs-modal-deleteを閉じる

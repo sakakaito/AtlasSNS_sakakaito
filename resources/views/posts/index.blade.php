@@ -14,7 +14,6 @@
     </form>
 </div>
 <!-- 一覧表示 -->
-<div>
 @foreach($posts as $post)
 <div class="list-area">
     <tr>
@@ -28,7 +27,7 @@
             </div>
         </td>
         <td>
-            <button type='submit' class="delete-button js-delete-button"><img src="images/trash.png" class="trash-image" alt="削除"></button>
+            <button type='submit' class="delete-button js-delete-button" data-id="{{$post->id}}" ><img src="images/trash.png" class="trash-image" alt="削除"></button>
         </td>
     </tr>
 </div>
@@ -50,15 +49,20 @@
    </div>
  </div>
 </div>
+</div>
 <!-- モーダルウィンドウ画面（削除） -->
 <div class="modal-delete js-modal-delete">
     <div class="modal-delete-content">
         <p>この投稿を削除します。よろしいでしょうか？</p>
-        <button type="submit">OK</button>
+         <form method="post" action="{{route('posts.delete')}}">
+            @csrf
+          <button type="submit">OK</button>
+          <input type="hidden" id="inputDeleteId" value="" name="deleteId">
+         </form>
         <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
     </div>
 </div>
-</div>
+
 
 
 
