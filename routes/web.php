@@ -44,6 +44,7 @@ Route::get('/profile','UsersController@profile')->name('users.profile')->middlew
 Route::post('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@search')->name('users.search')->middleware('auth');
+Route::get('/search/list','UsersController@searchList')->name('search.list');
 Route::post('/search','UsersController@search');
 
 //Route::get('/follow-list','PostsController@index')->middleware('auth');
