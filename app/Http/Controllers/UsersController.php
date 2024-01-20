@@ -21,4 +21,29 @@ class UsersController extends Controller
     }
         return view('users.search',['users'=>$users,'keyword'=>$keyword]);
     }
+
+    //フォロー機能
+    public function follow(User $user){
+        //ログイン中ユーザーを取得
+        $loginUser=auth()->user();
+       //フォローしているか
+       $is_following=$loginUser->isFollowing($user->id);
+        //フォローしていなければフォローする
+        if(!$is_following){
+            $loginUser->follow($user->id);
+        }
+        return redirect('/search');
+    }
+    // //フォロー解除機能
+    public function unfollow(User $user)
+    {
+        $loginUser= auth()->user();
+        // フォローしているか
+        $is_following = $loginUser->isFollowing($user->id);
+        if($is_following) {
+            // フォローしていればフォローを解除する
+            $loginUser->unfollow($user->id);
+            return back();
+        }
+    }
 }

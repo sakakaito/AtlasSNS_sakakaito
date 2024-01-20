@@ -21,6 +21,23 @@
     <tr>
         <td>{{$user->images}}</td>
         <td>{{$user->username}}</td>
+        <td>
+            @if(auth()->user()->isFollowing($user->id))
+            <div>
+                <form action="{{route('unfollow',['user'=>$user->id])}}" method="post">
+                    @csrf
+                    <button type="submit">フォロー解除</button>
+                </form>
+            </div>
+            @else
+            <div>
+                <form action="{{route('follow',['user'=>$user->id])}}" method="post">
+                    @csrf
+                    <button type="submit">フォローする</button>
+                </form>
+            </div>
+            @endif
+        </td>
     </tr>
 @endif
 </div>

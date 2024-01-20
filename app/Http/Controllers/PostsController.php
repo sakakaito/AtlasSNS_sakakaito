@@ -31,7 +31,7 @@ class PostsController extends Controller
         //$input = $request->only('user_id','post');
         Post::create([
            'user_id' => $id,
-            'post' => $request->post,//$request変数にpostを
+            'post' => $request->post,
         ]);
         // $post =  new Post;
         // $post->user_id = $id;

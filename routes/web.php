@@ -43,15 +43,17 @@ Route::post('/top','PostsController@index');
 Route::get('/profile','UsersController@profile')->name('users.profile')->middleware('auth');
 Route::post('/profile','UsersController@profile');
 
+//検索機能
 Route::get('/search','UsersController@search')->name('users.search')->middleware('auth');
 Route::get('/search/list','UsersController@searchList')->name('search.list');
 Route::post('/search','UsersController@search');
 
-//Route::get('/follow-list','PostsController@index')->middleware('auth');
-Route::post('/follow-list','PostsController@index');
+//フォロー機能
+Route::post('/search/{user}/follow','UsersController@follow')->name('follow');
+Route::post('/search/{user}/unfollow','UsersController@unfollow')->name('unfollow');
 
-//Route::get('/follower-list','PostsController@index')->middleware('auth');
-Route::post('/follower-list','PostsController@index');
+Route::post('/follow-list','PostsController@index')->middleware('auth');
+Route::post('/follower-list','PostsController@index')->middleware('auth');
 
 Route::get('/logout','Auth\LoginController@logout');//ログアウト
 
