@@ -21,6 +21,7 @@
         <td>{{ $post->user->username}}</td>
         <td>{{ $post->post}}</td>
         <td>{{ $post->updated_at}}</td>
+        @if(Auth::id() == $post->user_id)
         <td>
             <div class="edit-button-area">
             <button type='submit' class="edit-button js-edit-button" id="postDate" data-post="{{ $post->post}}" data-id="{{$post->id}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
@@ -29,6 +30,7 @@
         <td>
             <button type='submit' class="delete-button js-delete-button" data-id="{{$post->id}}" ><img src="images/trash.png" class="trash-image" alt="削除"></button>
         </td>
+        @endif
     </tr>
 </div>
 
