@@ -41,7 +41,9 @@ Route::get('/top','PostsController@index')->middleware('auth');
 Route::post('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile')->name('users.profile')->middleware('auth');
-Route::post('/profile','UsersController@profile');
+Route::post('/profile','UsersController@profileupdate')->name('profile.update');
+
+Route::get('/anotherprofile','UsersController@another')->name('users.another')->middleware('auth');
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 
@@ -53,6 +55,9 @@ Route::post('/search','UsersController@search');
 //フォロー機能
 Route::post('/search/{user}/follow','UsersController@follow')->name('follow');
 Route::post('/search/{user}/unfollow','UsersController@unfollow')->name('unfollow');
+
+//フォロー、フォロワー数の表示
+Route::get('/top/{user}','UsersController@show');
 
 Route::get('/follow-list','FollowsController@followList')->name('follows.followList')->middleware('auth');
 Route::get('/follower-list','FollowsController@followerList')->name('follows.followerList')->middleware('auth');

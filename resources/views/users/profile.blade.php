@@ -2,34 +2,36 @@
 
 @section('content')
 <div>
-    <img src="" alt="">
+    <img src="{{Auth::user()->images}}" alt="">
 </div>
-<form action="">
+<form method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">
+    @csrf
     <div class="profile_form">
         <div>
             <label for="username">user name</label>
-                <input type="text">
+                <input type="text" name="username" value="{{Auth::user()->username}}">
         </div>
         <div>
             <label for="mail">mail adress</label>
-                <input type="mail">
+                <input type="mail" name="mail" value="{{Auth::user()->mail}}">
         </div>
         <div>
             <label for="password">password</label>
-                <input type="password">
+                <input type="password" name="password">
         </div>
         <div>
             <label for="password_confirm">password comfirm</label>
-                <input type="password">
+                <input type="password" name="password_confirm">
         </div>
         <div>
             <label for="bio">bio</label>
-                <input type="text">
+                <input type="text" name="bio" value="{{Auth::user()->bio}}">
         </div>
         <div>
-            <label for="icon_image">icon image</label>
-                <input type="url">
+            <label for="icon_image" placeholder="ファイルを選択">icon image</label>
+                <input type="file" name="icon_image">
         </div>
+        <button type="submit">更新</button>
 
 
     </div>

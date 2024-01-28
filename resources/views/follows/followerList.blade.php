@@ -3,7 +3,11 @@
 @section('content')
 <h1>Follower List</h1>
 @foreach($userIcons as $userIcon)
-<div><img src="{{$userIcon->images}}" alt=""></div>
+<div>
+    <a href="/anotherprofile">
+        <img src="{{$userIcon->images}}" alt="">
+    </a>
+</div>
 @endforeach
 <div>
     <table>
