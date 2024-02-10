@@ -6,5 +6,32 @@ html{
 
 body{
     height: 100%;
-    background: #186AC9;
+    background:linear-gradient(#0056b1,#ffe556);
+    padding:50px 0;
+}
+/* .login_screen{
+    margin:0 auto;
+} */
+header{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+
+.atlas_icon{
+    width: 180px;
+}
+.sns{
+    font-size: 30px;
+}
+
+#container{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
 }

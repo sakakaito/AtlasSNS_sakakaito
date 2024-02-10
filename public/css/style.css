@@ -3,9 +3,14 @@ html{
 }
 body{
 }
+/* login */
+
 /* header */
 header{
     background:#186AC9;
+}
+.header_image{
+    width: 120px;
 }
 /* accordion menu */
 .accordion-container {
@@ -16,6 +21,9 @@ header{
     outline: 0;
     width: 100%;
     cursor: pointer;
+}
+.atlas_image{
+    margin-right: auto;
 }
 .accordion-container .accordion-title {
     display: block;

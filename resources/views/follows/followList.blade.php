@@ -3,13 +3,17 @@
 @section('content')
 <h1>Follow List</h1>
 @foreach($userIcons as $userIcon)
-<div><img src="{{$userIcon->images}}" alt=""></div>
+<div>
+    <a href="{{route('users.another',['id'=>$userIcon->id])}}">
+        <img src="storage/{{$userIcon->images}}" alt="">
+    </a>
+</div>
 @endforeach
 <div>
     <table>
         @foreach($posts as $post)
         <tr>
-            <td><img src="{{$post->user->images}}" alt=""></td>
+            <td><img src="storage/{{$post->user->images}}" alt=""></td>
             <td>{{ $post->user->username}}</td>
             <td>{{ $post->post}}</td>
             <td>{{ $post->updated_at}}</td>

@@ -43,13 +43,12 @@ Route::post('/top','PostsController@index');
 Route::get('/profile','UsersController@profile')->name('users.profile')->middleware('auth');
 Route::post('/profile','UsersController@profileupdate')->name('profile.update');
 
-Route::get('/anotherprofile','UsersController@another')->name('users.another')->middleware('auth');
+Route::get('/anotherprofile/{id}','UsersController@another')->name('users.another')->middleware('auth');
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 
 //検索機能
 Route::get('/search','UsersController@search')->name('users.search')->middleware('auth');
-Route::get('/search/list','UsersController@searchList')->name('search.list');
 Route::post('/search','UsersController@search');
 
 //フォロー機能

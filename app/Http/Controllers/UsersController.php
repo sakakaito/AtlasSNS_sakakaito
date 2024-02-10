@@ -11,8 +11,13 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
-    public function another(){
-        return view('users.anotherprofile');
+    public function another($id){
+        // dd($id);
+        //リンク元のユーザー情報を取得
+        $user = User::find($id);
+        // dd($user->posts);
+        // dd($user);
+        return view('users.anotherprofile',['user'=>$user]);
     }
     //profile更新機能
     public function profileupdate(Request $request){
@@ -63,7 +68,7 @@ class UsersController extends Controller
         if(!$is_following){
             $loginUser->follow($user->id);
         }
-        return redirect('/search');
+        return back();
     }
     // //フォロー解除機能
     public function unfollow(User $user)

@@ -19,7 +19,7 @@
 <div>
 @if(isset($user)and!(Auth::user()==$user))
     <tr>
-        <td>{{$user->images}}</td>
+        <td><img src="storage/{{$user->images}}" alt=""></td>
         <td>{{$user->username}}</td>
         <td>
             @if(auth()->user()->isFollowing($user->id))

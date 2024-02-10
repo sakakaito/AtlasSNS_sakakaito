@@ -20,12 +20,14 @@
   <!--OGPタグ/twitterカード-->
 </head>
 <body>
-  <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p>Social Network Service</p>
-  </header>
-  <div id="container">
-    @yield('content')
+  <div class="login_screen">
+    <header>
+      <h1><img class="atlas_icon" src="images/atlas.png"></h1>
+      <p class="sns">Social Network Service</p>
+    </header>
+      <div id="container">
+        @yield('content')
+      </div>
   </div>
 
 

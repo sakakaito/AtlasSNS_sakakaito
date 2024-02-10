@@ -6,7 +6,7 @@
     <form method="post" action="{{ route('posts.store') }}">
         @csrf
         <div>
-            <img src="{{Auth::user()->images}}" alt="">
+            <img src="storage/{{Auth::user()->images}}" alt="">
             <!--<input type="text">-->
             <textarea name="post" id="" cols="30" rows="10" placeholder="投稿内容を登録してください"></textarea>
             <button type='submit'><img src="images/post.png" alt=""></button>
@@ -17,7 +17,7 @@
 @foreach($posts as $post)
 <div class="list-area">
     <tr>
-        <td><img src="{{ $post->user->images}}" alt=""></td>
+        <td><img src="storage/{{ $post->user->images}}" alt=""></td>
         <td>{{ $post->user->username}}</td>
         <td>{{ $post->post}}</td>
         <td>{{ $post->updated_at}}</td>
