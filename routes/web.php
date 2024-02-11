@@ -41,7 +41,7 @@ Route::get('/top','PostsController@index')->middleware('auth');
 Route::post('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile')->name('users.profile')->middleware('auth');
-Route::post('/profile','UsersController@profileupdate')->name('profile.update');
+Route::post('/profile','UsersController@profileupdate')->name('users.profileupdate');
 
 Route::get('/anotherprofile/{id}','UsersController@another')->name('users.another')->middleware('auth');
 //ログアウト

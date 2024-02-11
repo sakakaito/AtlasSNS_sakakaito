@@ -37,7 +37,7 @@
                          <li><a href="/logout">ログアウト</a></li>
                        </ul>
                       </div>
-                      <div class="icon"><img src="{{asset('storage/'.Auth::user()->images)}}"></div>
+                      <div class="icon"><img src="{{asset('storage/images/'.Auth::user()->images)}}"></div>
                 </div>
             </div>
         </div>

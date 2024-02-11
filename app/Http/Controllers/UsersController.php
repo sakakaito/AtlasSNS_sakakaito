@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -21,16 +22,18 @@ class UsersController extends Controller
     }
     //profile更新機能
     public function profileupdate(Request $request){
-        //バリデーション
+        // dd($request);
+        // バリデーション
         $request->validate([
             'username' => 'required|min:2|max:12',
-            'mail' => 'required|email|unique:users|min:5|max:40',
+            'mail' => 'required|email|min:5|max:40|unique:users,mail,'.$request->mail.',mail',
             'password' => 'required|alpha_num|min:8|max:20|confirmed',
             'password_confirmation' => 'required|alpha_num|min:8|max:20|',
             'bio' => 'max:150',
-            'icon_image' => 'image|mines:png,jpg,gif,bmp,svg'
+            'icon_image' => 'image|mimes:png,jpg,gif,bmp,svg',
         ]);
         $id = $request->input('id');
+        // dd($id);
         $username = $request->input('username');
         $mail = $request->input('mail');
         $password = $request->input('password');
@@ -43,7 +46,8 @@ class UsersController extends Controller
             'username' => $username,
             'mail' => $mail,
             'password' => bcrypt($password),
-            'bio' => $bio
+            'bio' => $bio,
+            'images' => $iconImage,
         ]);
         return redirect('/top');
     }

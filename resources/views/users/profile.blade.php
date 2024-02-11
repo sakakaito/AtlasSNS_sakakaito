@@ -4,9 +4,10 @@
 <div>
     <img src="storage/{{Auth::user()->images}}" alt="">
 </div>
-<form method="post" enctype="multipart/form-data" action="{{route('profile.update')}}">
+<form method="post" enctype="multipart/form-data" action="{{route('users.profileupdate')}}">
     @csrf
     <div class="profile_form">
+        <input type="hidden" name="id" value="{{Auth::user()->id}}">
         <div>
             <label for="username">user name</label>
                 <input type="text" name="username" value="{{Auth::user()->username}}">
@@ -21,7 +22,7 @@
         </div>
         <div>
             <label for="password_confirm">password comfirm</label>
-                <input type="password" name="password_confirm">
+                <input type="password" name="password_confirmation">
         </div>
         <div>
             <label for="bio">bio</label>

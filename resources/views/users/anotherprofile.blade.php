@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div>
-        <img src="{{asset('storage/'.$user->images)}}" alt="">
+        <img src="{{asset('storage/images/'.$user->images)}}" alt="">
     </div>
     <ul>
         <li>name {{$user->username}}</li>
