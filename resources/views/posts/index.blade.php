@@ -16,22 +16,22 @@
 <!-- 一覧表示 -->
 @foreach($posts as $post)
 <div class="list-area">
-    <tr>
-        <td><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></td>
-        <td>{{ $post->user->username}}</td>
-        <td>{{ $post->post}}</td>
-        <td>{{ $post->updated_at}}</td>
+    <ul>
+        <li><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></li>
+        <li>{{ $post->user->username}}</li>
+        <li>{{ $post->post}}</li>
+        <li>{{ $post->updated_at}}</li>
         @if(Auth::id() == $post->user_id)
-        <td>
+        <li>
             <div class="edit-button-area">
-            <button type='submit' class="edit-button js-edit-button" id="postDate" data-post="{{ $post->post}}" data-id="{{$post->id}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
+            <button type='submit' class="edit-button js-edit-button" id="posliate" data-post="{{ $post->post}}" data-id="{{$post->id}}"><img src="images/edit.png" class="edit-image" alt="編集"></button>
             </div>
-        </td>
-        <td>
+        </li>
+        <li>
             <button type='submit' class="delete-button js-delete-button" data-id="{{$post->id}}" ><img src="images/trash.png" class="trash-image" alt="削除"></button>
-        </td>
+        </li>
         @endif
-    </tr>
+    </ul>
 </div>
 
 @endforeach
@@ -59,7 +59,7 @@
          <form method="post" action="{{route('posts.delete')}}">
             @csrf
           <button type="submit">OK</button>
-          <input type="hidden" id="inputDeleteId" value="" name="deleteId">
+          <input type="hidden" id="inpulieleteId" value="" name="deleteId">
          </form>
         <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
     </div>

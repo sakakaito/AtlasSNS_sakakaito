@@ -25,7 +25,7 @@
 <div>
         <ul>
             <!-- image -->
-            <li><img src="{{asset('storage/'.$post->user->images)}}" alt=""></li>
+            <li><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></li>
             <!-- name -->
             <li>{{$post->user->username}}</li>
             <!-- post -->

@@ -18,10 +18,10 @@
 @foreach($users as $user)
 <div>
 @if(isset($user)and!(Auth::user()==$user))
-    <tr>
-        <td><img src="storage/{{$user->images}}" alt=""></td>
-        <td>{{$user->username}}</td>
-        <td>
+    <ul>
+        <li><img src="{{asset('storage/images/'.$user->images)}}" alt=""></li>
+        <li>{{$user->username}}</li>
+        <li>
             @if(auth()->user()->isFollowing($user->id))
             <div>
                 <form action="{{route('unfollow',['user'=>$user->id])}}" method="post">
@@ -37,8 +37,8 @@
                 </form>
             </div>
             @endif
-        </td>
-    </tr>
+        </li>
+    </ul>
 @endif
 </div>
 

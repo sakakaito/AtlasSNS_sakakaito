@@ -5,19 +5,19 @@
 @foreach($userIcons as $userIcon)
 <div>
     <a href="{{route('users.another',['id'=>$userIcon->id])}}">
-        <img src="storage/{{$userIcon->images}}" alt="">
+        <img src="{{asset('storage/images/'.$userIcon->images)}}" alt="">
     </a>
 </div>
 @endforeach
 <div>
     <table>
         @foreach($posts as $post)
-        <tr>
-            <td><img src="storage/{{$post->user->images}}" alt=""></td>
-            <td>{{ $post->user->username}}</td>
-            <td>{{ $post->post}}</td>
-            <td>{{ $post->updated_at}}</td>
-        </tr>
+        <ul>
+            <li><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></li>
+            <li>{{ $post->user->username}}</li>
+            <li>{{ $post->post}}</li>
+            <li>{{ $post->updated_at}}</li>
+        </ul>
         @endforeach
     </table>
 </div>

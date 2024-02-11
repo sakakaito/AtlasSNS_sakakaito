@@ -10,9 +10,10 @@ class PostsController extends Controller
 {
     //
     public function index(){
-        $posts = Post::get();
         // dd($posts);
-        $posts = Post::all();//postsテーブルのデータをすべて取得
+        $login_id = Auth::id();
+        $following_id = Auth::user()->follows()->pluck('followed_id');
+        $posts = Post::with('user')->whereIn('user_id',$following_id)->orwhere('user_id',$login_id)->get();//postsテーブルのデータをすべて取得
         return view('posts.index',['posts'=>$posts]);//取得したデータをviewファイルに渡す。compact('post')でもいけそう
     }
 
