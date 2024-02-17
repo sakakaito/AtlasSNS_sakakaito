@@ -26,14 +26,14 @@
             <div>
                 <form action="{{route('unfollow',['user'=>$user->id])}}" method="post">
                     @csrf
-                    <button type="submit">フォロー解除</button>
+                    <button type="submit" class="btn btn-danger">フォロー解除</button>
                 </form>
             </div>
             @else
             <div>
                 <form action="{{route('follow',['user'=>$user->id])}}" method="post">
                     @csrf
-                    <button type="submit">フォローする</button>
+                    <button type="submit" class="btn btn-primary">フォローする</button>
                 </form>
             </div>
             @endif

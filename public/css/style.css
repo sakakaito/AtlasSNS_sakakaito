@@ -3,14 +3,50 @@ html{
 }
 body{
 }
-/* login */
+img{
+    width: 50px;
+}
+.btn a{
+    color: #fff;
+    text-decoration: none;
+}
+/* toppage */
 
 /* header */
 header{
+    padding: 15px 20px;
     background:#186AC9;
 }
 .header_image{
     width: 120px;
+}
+/* sideber */
+#confirm{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.f_btn{
+    text-align: right;
+    margin-bottom: 30px;
+}
+.f_btn button{
+    width: 50%;
+}
+.f_count{
+    display: flex;
+}
+.f_count p:last-child{
+    flex-grow: 3;
+}
+.f_count p:first-child{
+    flex-grow: 1;
+}
+.search_btn{
+    text-align: center;
+    margin-top: 30px;
+}
+.search_btn button{
+    width: 50%;
 }
 /* accordion menu */
 .accordion-container {
@@ -21,26 +57,19 @@ header{
     outline: 0;
     width: 100%;
     cursor: pointer;
+    color: #fff;
 }
 .atlas_image{
     margin-right: auto;
 }
-.accordion-container .accordion-title {
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 10px;
-    margin: 0 10px;
+.accordion-title {
+    width: 50px;
     cursor: pointer;
     transform: rotate(-90deg);
 }
-.accordion-title{
-    position: relative;
-    right: 60px;
-}
 .accordion-title:after{
-    border-right: solid 4px #000;
-    border-bottom: solid 4px #000;
+    border-right: solid 4px #ffffff;
+    border-bottom: solid 4px #ffffff;
     content: "";
     position: absolute;
     right: 25px;
@@ -73,19 +102,124 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+/* 投稿エリア */
+.post_content{
+    padding: 30px 200px 30px 70px;
+    border-bottom: 10px solid #ddd;
+}
+.post_btn_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.post_content textarea{
+    margin: 0 20px;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 100px;
+}
+.post_list{
+    display: flex;
+}
+.post_list div:nth-child(2){
+    flex-grow: 1;
+}
+.post_list div:last-child{
+    padding: 60px 0 0 0;
+    margin-left: 40px;
+}
 
 /* 一覧表示 */
 .list-area{
-    display: flex;
+    padding: 15px 15px 15px 65px;
+    /* margin-left: 50px; */
     border-bottom: solid #ddd;
 }
-.edit-image{
-    width: 50px;
+.edit-button{
+    width: 40px;
 }
-.trash-image{
-    width: 50px;
+.delete-button{
+    width: 40px;
 }
-
+.user_post_list{
+    display: flex;
+}
+.item_username_post{
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.item_username_post li{
+    margin-bottom: 15px;
+}
+.item_updated_btn:first-child{
+    margin-bottom: 50px;
+}
+.btn_area{
+    display: flex;
+    margin-top: 50px;
+}
+.btn_area li:first-child{
+    flex-grow: 3;
+    text-align: right;
+}
+.btn_area li:last-child{
+    flex-grow: 2;
+    text-align: center;
+}
+/* フォローリスト */
+.f_list_head{
+    display: flex;
+    padding: 20px 50px;
+    border-bottom: 10px solid #ddd;
+}
+.f_list_head div:first-child{
+    margin-right: 30px;
+    padding: 10px;
+}
+.f_list_title{
+    font-size: 30px;
+    font-weight: 400;
+}
+.f_list_icon{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.f_list_content{
+    display: flex;
+    padding: 15px 15px 15px 65px;
+    border-bottom: solid #ddd;
+}
+.f_list_content div:nth-child(2){
+    flex-grow: 1;
+    margin-left: 15px;
+}
+.f_list_name{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+/* 別ユーザープロフィール */
+.another_user_content{
+    border-bottom: 10px solid #ddd;
+    display: flex;
+    padding: 30px 10px 20px 60px;
+}
+.another_user_content div:nth-child(2){
+    flex-grow: 1;
+    font-size: 20px;
+}
+.another_user_content div:nth-child(3){
+    flex-grow: 10;
+    font-size: 20px;
+}
+.another_user_profile ul li{
+    margin-bottom: 20px;
+}
+.another_user_btn{
+    padding-top: 60px;
+}
 /* modal area */
 .layer{
     background: rgba(0,0,0,.2);

@@ -1,25 +1,34 @@
 @extends('layouts.login')
 
 @section('content')
-<h1>Follow List</h1>
-@foreach($userIcons as $userIcon)
-<div>
-    <a href="{{route('users.another',['id'=>$userIcon->id])}}">
-        <img src="{{asset('storage/images/'.$userIcon->images)}}" alt="">
-    </a>
+<div class="f_list_head">
+    <div>
+        <h1 class="f_list_title">Follow List</h1>
+    </div>
+    @foreach($userIcons as $userIcon)
+    <div class="f_list_icon">
+        <a href="{{route('users.another',['id'=>$userIcon->id])}}">
+            <img src="{{asset('storage/images/'.$userIcon->images)}}" alt="">
+        </a>
+    </div>
+    @endforeach
 </div>
-@endforeach
-<div>
-    <table>
+
+<div class="f_list_area">
         @foreach($posts as $post)
-        <ul>
-            <li><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></li>
-            <li>{{ $post->user->username}}</li>
-            <li>{{ $post->post}}</li>
-            <li>{{ $post->updated_at}}</li>
+        <ul class="f_list_content">
+            <div>
+                <li><img src="{{asset('storage/images/'.$post->user->images)}}" alt=""></li>
+            </div>
+            <div>
+                <li class="f_list_name">{{ $post->user->username}}</li>
+                <li class="f_list_post">{{ $post->post}}</li>
+            </div>
+            <div>
+                <li>{{ $post->updated_at}}</li>
+            </div>
         </ul>
         @endforeach
-    </table>
 </div>
 
 @endsection
