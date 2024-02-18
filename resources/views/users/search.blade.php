@@ -3,34 +3,40 @@
 @section('content')
 <div>
     <div>
-        <form action="{{route('users.search')}}" method="post">
+        <form action="{{route('users.search')}}" method="post" class="search_form">
             @csrf
-            <input type="text" name="keyword" id="searchWord" placeholder="ユーザー名">
-            <button type="submit" class="search-btn"><img src="images/search.png" alt=""></button>
-            <!-- <p>検索ワード：</p> -->
+            <div>
+                <input type="text" class="s_form_name" name="keyword" id="searchWord" placeholder="ユーザー名">
+            </div>
+            <div>
+                <button type="submit" class="search-btn" ><img src="images/search.png" alt=""></button>
+            </div>
+            <div>
+                @if(!empty($keyword))
+                <p>検索ワード：{{$keyword}}</p>
+                @endif
+            </div>
         </form>
     </div>
 </div>
-@if(!empty($keyword))
-<p>検索ワード：{{$keyword}}</p>
-@endif
 
+
+<div class="search_user_content">
 @foreach($users as $user)
-<div>
 @if(isset($user)and!(Auth::user()==$user))
-    <ul>
+    <ul class="search_user">
         <li><img src="{{asset('storage/images/'.$user->images)}}" alt=""></li>
         <li>{{$user->username}}</li>
         <li>
             @if(auth()->user()->isFollowing($user->id))
-            <div>
+            <div class="s_user_btn">
                 <form action="{{route('unfollow',['user'=>$user->id])}}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-danger">フォロー解除</button>
                 </form>
             </div>
             @else
-            <div>
+            <div class="s_user_btn">
                 <form action="{{route('follow',['user'=>$user->id])}}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-primary">フォローする</button>
@@ -40,7 +46,7 @@
         </li>
     </ul>
 @endif
-</div>
 
 @endforeach
+</div>
 @endsection

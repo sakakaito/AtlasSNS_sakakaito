@@ -220,6 +220,48 @@ header{
 .another_user_btn{
     padding-top: 60px;
 }
+/* 検索ページ */
+.search_form{
+    padding: 40px;
+    display: flex;
+    border-bottom: 10px solid #ddd;
+}
+.search_form div:nth-child(3){
+    flex: 1;
+}
+.search_form div:nth-child(2){
+    margin-right: 10px;
+}
+.search_form div:last-child{
+    padding-top: 15px;
+    flex: 1;
+}
+
+.s_form_name{
+    width: 250px;
+    height: 40px;
+}
+.search_user_content{
+    padding: 40px 15%;
+}
+.search_user{
+    display: flex;
+    margin-bottom: 40px;
+}
+.search_user li:first-child{
+    flex: 1;
+    text-align: right;
+}
+.search_user li:nth-child(2){
+    flex: 1;
+    padding: 10px 20px;
+}
+.search_user li:last-child{
+    flex: 1;
+}
+.s_user_btn .btn{
+    width: 120px;
+}
 /* modal area */
 .layer{
     background: rgba(0,0,0,.2);
