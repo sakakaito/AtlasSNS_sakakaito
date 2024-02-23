@@ -9,7 +9,7 @@
                 <input type="text" class="s_form_name" name="keyword" id="searchWord" placeholder="ユーザー名">
             </div>
             <div>
-                <button type="submit" class="search-btn" ><img src="images/search.png" alt=""></button>
+                <button><img  type="submit" class="" src="images/search.png" alt=""></button>
             </div>
             <div>
                 @if(!empty($keyword))

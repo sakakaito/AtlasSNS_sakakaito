@@ -8,7 +8,7 @@
         <div class="post_list">
             <div><img src="{{asset('storage/images/'.Auth::user()->images)}}" alt=""></div>
             <div><textarea name="post" id="" cols="30" rows="10" placeholder="投稿内容を登録してください"></textarea></div>
-            <div><img type="submit"class="post_btn_image" src="images/post.png" alt=""></div>
+            <button type="submit" ><img class="post_btn_image" src="images/post.png" alt=""></button>
         </div>
     </form>
 </div>

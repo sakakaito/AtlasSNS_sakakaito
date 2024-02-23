@@ -1,12 +1,12 @@
 @extends('layouts.login')
 
 @section('content')
-<div>
-    <img src="storage/{{Auth::user()->images}}" alt="">
-</div>
+
 <form method="post" enctype="multipart/form-data" action="{{route('users.profileupdate')}}">
     @csrf
     <div class="profile_form">
+    <img class="p_form_icon" src="storage/{{Auth::user()->images}}" alt="">
+
         <input type="hidden" name="id" value="{{Auth::user()->id}}">
         <div>
             <label for="username">user name</label>
@@ -28,16 +28,20 @@
             <label for="bio">bio</label>
                 <input type="text" name="bio" value="{{Auth::user()->bio}}">
         </div>
-        <div>
-            <label for="icon_image" placeholder="ファイルを選択">icon image</label>
-                <input type="file" name="icon_image">
-        </div>
-        <button type="submit">更新</button>
-
-
+        <!-- <div> -->
+            <div class="p_form_image_content">
+                <label for="icon_image" placeholder="ファイルを選択">icon image</label>
+                <label for="image" class="p_form_image">
+                    <p>ファイルを選択</p>
+                    <input type="file" id="image" name="icon_image">
+                </label>
+            </div>
+        <!-- </div> -->
+    </div>
+    <div class="p_form_btn">
+            <button type="submit" class="btn btn-danger">更新</button>
     </div>
 </form>
-
 
 
 @endsection

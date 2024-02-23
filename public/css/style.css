@@ -48,6 +48,51 @@ header{
 .search_btn button{
     width: 50%;
 }
+/* プロフィール画面 */
+.profile_form{
+    padding: 0 15%;
+    margin-top: 40px;
+}
+.p_form_icon{
+    position: absolute;
+    left: 5%;
+    width: 40px;
+}
+.profile_form div{
+    display: flex;
+    margin-bottom: 30px;
+}
+/* .profile_form div:last-child{
+    display: block;
+} */
+.profile_form label{
+    flex: 2;
+}
+.profile_form label:last-child{
+    flex: 3;
+}
+.profile_form input{
+    flex: 3;
+    border:solid #ddd;
+}
+.p_form_btn{
+    text-align: center;
+}
+.p_form_btn button{
+    width: 150px;
+}
+input[type="file"]{
+    display: none;
+} 
+ .p_form_image{
+    border: solid #ddd;
+    height: 80px;
+}
+.p_form_image_content p{
+background: #ddd;
+margin: 25px 35%;
+text-align: center;
+}
 /* accordion menu */
 .accordion-container {
     display: flex;
@@ -122,6 +167,14 @@ header{
 }
 .post_list{
     display: flex;
+}
+.post_list button{
+    background-color:transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    padding-top: 50px;
 }
 .post_list div:nth-child(2){
     flex-grow: 1;
@@ -236,7 +289,16 @@ header{
     padding-top: 15px;
     flex: 1;
 }
-
+.search_form input{
+    height: 50px;
+}
+.search_form button{
+    background-color: transparent;
+    border: none;
+}
+.search_form img{
+    border-radius: 5px;
+}
 .s_form_name{
     width: 250px;
     height: 40px;
