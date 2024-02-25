@@ -24,7 +24,7 @@
             <li>{{ $post->post}}</li>
         </div>
         <div class="item_updated_btn">
-        <li>{{ $post->updated_at}}</li>
+        <li>{{substr($post->updated_at,0,16)}}</li>
         @if(Auth::id() == $post->user_id)
             <div class="btn_area">
                 <li>
@@ -32,8 +32,9 @@
                         <img src="images/edit.png" type='submit' class="edit-button js-edit-button" data-post="{{ $post->post}}" data-id="{{$post->id}}">
                     </div>
                 </li>
-                <li>
-                    <img src="images/trash.png" type='submit' class="delete-button js-delete-button" data-id="{{$post->id}}" >
+                <li class="trash-btn">
+                    <a class="delete-button js-delete-button" data-id="{{$post->id}}" ></a>
+                    <!-- <img src="images/trash-h.png" type='submit' class="delete-button js-delete-button" data-id="{{$post->id}}" > -->
                 </li>
             </div>
         @endif
@@ -52,7 +53,7 @@
      <div class="edit-area">
       <textarea class="edit-text js-modal-text" name="post" id="inputText" cols="30" rows="10" value=""></textarea>
       <input class="" type="hidden" id="inputId" value="" name="textId">
-        <img src="images/edit.png" type="submit" alt="">
+        <button type="submit"><img src="images/edit.png" alt=""></button>
      </div>
     </form>
    </div>
@@ -63,12 +64,12 @@
 <div class="modal-delete js-modal-delete">
     <div class="modal-delete-content">
         <p>この投稿を削除します。よろしいでしょうか？</p>
-         <form method="post" action="{{route('posts.delete')}}">
+         <form class="delete-btn-area" method="post" action="{{route('posts.delete')}}">
             @csrf
-          <button type="submit">OK</button>
-          <input type="hidden" id="inpulieleteId" value="" name="deleteId">
-         </form>
-        <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
+            <button type="submit" class="btn btn-primary">OK</button>
+             <input type="hidden" id="inpulieleteId" value="" name="deleteId">
+            <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
+        </form>
     </div>
 </div>
 

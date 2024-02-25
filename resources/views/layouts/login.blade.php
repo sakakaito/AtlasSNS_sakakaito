@@ -32,14 +32,14 @@
                     <div class="atlas_image">
                         <a href="/top"><img class="header_image" src="{{asset('images/atlas.png')}}"></a>
                     </div>
-                    <div>{{ Auth::user()->username }}さん
+                    <div class="head_username">{{ Auth::user()->username }}さん
                     </div>
                     <div  class="accordion-title js-accordion-title">
                     </div>
                             <div class="accordion-content">
                                 <ul>
                                     <li><a href="/top">ホーム</a></li>
-                                    <li><a href="/profile">プロフィール</a></li>
+                                    <li><a href="/profile">プロフィール編集</a></li>
                                     <li><a href="/logout">ログアウト</a></li>
                                 </ul>
                             </div>
@@ -56,7 +56,7 @@
         </div>
         <div id="side-bar">
             <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
+                <p class="side_username">{{ Auth::user()->username }}さんの</p>
                 <div class="f_count">
                     <p>フォロー数</p>
                     <p>{{Auth::user()->follows()->count()}}名</p>

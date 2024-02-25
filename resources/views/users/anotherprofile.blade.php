@@ -41,7 +41,7 @@
         <li class="f_list_post">{{ $post->post}}</li>
     </div>
     <div>
-        <li>{{ $post->updated_at}}</li>
+        <li>{{ substr($post->updated_at,0,16)}}</li>
     </div>
 </ul>
 @endforeach
