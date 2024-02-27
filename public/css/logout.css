@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-html{
+/* html{
     height: 100%;
-}
+} */
 
 body{
     height: 100%;
@@ -44,7 +44,7 @@ p a{
 } */
 .login_form{
     width: 250px;
-    height: 300px;
+    height: 100%;
     margin: 10% auto;
     padding: 20px;
     color: #fff;
@@ -64,7 +64,7 @@ p a{
 }
 .user_register_form{
     width: 270px;
-    height: 400px;
+    height: 100%;
     margin: 10% auto;
     padding: 20px;
     color: #fff;

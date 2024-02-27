@@ -64,8 +64,9 @@ class PostsController extends Controller
     }
     // 削除機能
     public function delete(Request $request){
-        // dd($id);
+        // dd($request);
         $id = $request->input('deleteId');
+        // dd($id);
         Post::where('id',$id)->delete();
         return back();
     }

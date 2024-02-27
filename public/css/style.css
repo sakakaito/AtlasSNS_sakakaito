@@ -5,6 +5,7 @@ body{
 }
 img{
     width: 50px;
+    border-radius: 50%;
 }
 .btn a{
     color: #fff;
@@ -18,7 +19,12 @@ header{
     background:#186AC9;
 }
 .header_image{
-    width: 120px;
+    width: 110px;
+    height: 40px;
+    background: url('../images/atlas.png');
+    background-size: contain;
+    display: inline-block;
+
 }
 .head_username{
     width: 100px;
@@ -244,6 +250,10 @@ text-align: center;
 }
 .edit-button{
     width: 40px;
+    height: 40px;
+    background: url('../images/edit.png');
+    display: inline-block;
+    background-size: contain;
 }
 .delete-button{
     width: 40px;
@@ -445,7 +455,10 @@ text-align: center;
     text-align: center;
  }
  .edit-area button{
-    background: transparent;
+    background: url('../images/edit.png')no-repeat;
+    background-size: contain;
+    height: 40px;
+    display: inline-block;
     border: none;
  }
  .edit-text {
@@ -496,4 +509,15 @@ text-align: center;
  .delete-btn-area button:last-child{
     border-radius: 5px;
     margin-left: 10px;
+ }
+ .del-button-close{
+    cursor: pointer;
+    width: 80px;
+    border: solid#000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    margin-left: 10px;
+    padding-top: 5px;
  }

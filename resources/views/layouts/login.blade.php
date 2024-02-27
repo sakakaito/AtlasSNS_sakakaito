@@ -30,7 +30,7 @@
             <div id="">
                 <div id="accordion" class="accordion-container">
                     <div class="atlas_image">
-                        <a href="/top"><img class="header_image" src="{{asset('images/atlas.png')}}"></a>
+                        <a href="/top" class="header_image" ></a>
                     </div>
                     <div class="head_username">{{ Auth::user()->username }}さん
                     </div>

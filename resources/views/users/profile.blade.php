@@ -1,7 +1,15 @@
 @extends('layouts.login')
 
 @section('content')
-
+@if($errors->any())
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <form method="post" enctype="multipart/form-data" action="{{route('users.profileupdate')}}">
     @csrf
     <div class="profile_form">

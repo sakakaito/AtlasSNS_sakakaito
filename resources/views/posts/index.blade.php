@@ -2,6 +2,15 @@
 
 @section('content')
 <!--<h2>機能を実装していきましょう。</h2>-->
+@if($errors->any())
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="post_content">
     <form method="post" action="{{ route('posts.store') }}">
         @csrf
@@ -29,7 +38,7 @@
             <div class="btn_area">
                 <li>
                     <div class="edit-button-area">
-                        <img src="images/edit.png" type='submit' class="edit-button js-edit-button" data-post="{{ $post->post}}" data-id="{{$post->id}}">
+                        <a class="edit-button js-edit-button" data-post="{{ $post->post}}" data-id="{{$post->id}}"></a>
                     </div>
                 </li>
                 <li class="trash-btn">
@@ -53,7 +62,7 @@
      <div class="edit-area">
       <textarea class="edit-text js-modal-text" name="post" id="inputText" cols="30" rows="10" value=""></textarea>
       <input class="" type="hidden" id="inputId" value="" name="textId">
-        <button type="submit"><img src="images/edit.png" alt=""></button>
+        <button type="submit" class="edit-button"></button>
      </div>
     </form>
    </div>
@@ -67,8 +76,8 @@
          <form class="delete-btn-area" method="post" action="{{route('posts.delete')}}">
             @csrf
             <button type="submit" class="btn btn-primary">OK</button>
-             <input type="hidden" id="inpulieleteId" value="" name="deleteId">
-            <button type="submit" class="del-button-close js-del-button-close">キャンセル</button>
+             <input type="hidden" id="inputDeleteId" value="" name="deleteId">
+            <a class="del-button-close js-del-button-close">キャンセル</a>
         </form>
     </div>
 </div>

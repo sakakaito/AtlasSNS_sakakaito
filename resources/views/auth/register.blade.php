@@ -17,21 +17,21 @@
 </div>
 @endif
 
-<div>{{ Form::label('user name') }}</div>
+<div>{{ Form::label('ユーザー名') }}</div>
 <div>{{ Form::text('username',null,['class' => 'input']) }}</div>
 
-<div>{{ Form::label('mail adress') }}</div>
+<div>{{ Form::label('メールアドレス') }}</div>
 <div>{{ Form::text('mail',null,['class' => 'input']) }}</div>
 
-<div>{{ Form::label('password') }}</div>
-<div>{{ Form::text('password',null,['class' => 'input']) }}</div>
+<div>{{ Form::label('パスワード') }}</div>
+<div>{{ Form::password('password',null,['class' => 'input']) }}</div>
 
-<div>{{ Form::label('password comfirm') }}</div>
-<div>{{ Form::text('password_confirmation',null,['class' => 'input']) }}</div>
+<div>{{ Form::label('パスワード確認') }}</div>
+<div>{{ Form::password('password_confirmation',null,['class' => 'input']) }}</div>
 
-<div class="register_btn">{{ Form::submit('REGISTER',['class'=>'btn btn-danger']) }}</div>
+<div class="register_btn">{{ Form::submit('新規登録',['class'=>'btn btn-danger']) }}</div>
 
-<div><p><a href="/login">ログイン画面へ戻る</a></p></div>
+<div><p><a href="/login">ログイン画面に戻る</a></p></div>
 </div>
 {!! Form::close() !!}
 
