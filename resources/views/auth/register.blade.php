@@ -9,7 +9,7 @@
 <!-- バリデーション後　エラー表示 -->
 @if($errors->any())
 <div>
-    <ul>
+    <ul class="register_errors">
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach

@@ -3,7 +3,7 @@
 @section('content')
 @if($errors->any())
 <div>
-    <ul>
+    <ul class="error_sentence">
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach
@@ -17,28 +17,28 @@
 
         <input type="hidden" name="id" value="{{Auth::user()->id}}">
         <div>
-            <label for="username">user name</label>
+            <label for="username">ユーザー名</label>
                 <input type="text" name="username" value="{{Auth::user()->username}}">
         </div>
         <div>
-            <label for="mail">mail adress</label>
+            <label for="mail">メールアドレス</label>
                 <input type="mail" name="mail" value="{{Auth::user()->mail}}">
         </div>
         <div>
-            <label for="password">password</label>
+            <label for="password">パスワード</label>
                 <input type="password" name="password">
         </div>
         <div>
-            <label for="password_confirm">password comfirm</label>
+            <label for="password_confirm">パスワード確認</label>
                 <input type="password" name="password_confirmation">
         </div>
         <div>
-            <label for="bio">bio</label>
+            <label for="bio">自己紹介文</label>
                 <input type="text" name="bio" value="{{Auth::user()->bio}}">
         </div>
         <!-- <div> -->
             <div class="p_form_image_content">
-                <label for="icon_image" placeholder="ファイルを選択">icon image</label>
+                <label for="icon_image" placeholder="ファイルを選択">アアイコン画像</label>
                 <label for="image" class="p_form_image">
                     <p>ファイルを選択</p>
                     <input type="file" id="image" name="icon_image">

@@ -7,11 +7,11 @@
     </div>
     <div class="another_user_profile">
         <ul>
-            <li>name</li>
-            <li>bio</li>
+            <li>ユーザー名</li>
+            <li>自己紹介</li>
         </ul>
     </div>
-    <div>
+    <div class="another_user_profile2">
         <ul>
             <li>{{$user->username}}</li>
             <li>{{$user->bio}}</li>

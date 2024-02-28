@@ -4,7 +4,7 @@
 <!--<h2>機能を実装していきましょう。</h2>-->
 @if($errors->any())
 <div>
-    <ul>
+    <ul class="error_sentence">
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach
@@ -30,7 +30,7 @@
         </div>
         <div class="item_username_post">
             <li>{{ $post->user->username}}</li>
-            <li>{{ $post->post}}</li>
+            <li>{!! nl2br(e($post->post)) !!}</li>
         </div>
         <div class="item_updated_btn">
         <li>{{substr($post->updated_at,0,16)}}</li>
@@ -38,7 +38,7 @@
             <div class="btn_area">
                 <li>
                     <div class="edit-button-area">
-                        <a class="edit-button js-edit-button" data-post="{{ $post->post}}" data-id="{{$post->id}}"></a>
+                        <a class="edit-button js-edit-button" data-post="{!! ($post->post) !!}" data-id="{{$post->id}}"></a>
                     </div>
                 </li>
                 <li class="trash-btn">
