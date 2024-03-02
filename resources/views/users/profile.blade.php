@@ -13,7 +13,7 @@
 <form method="post" enctype="multipart/form-data" action="{{route('users.profileupdate')}}">
     @csrf
     <div class="profile_form">
-    <img class="p_form_icon" src="storage/{{Auth::user()->images}}" alt="">
+        <img class="p_form_icon" src="{{asset('storage/images/'.Auth::user()->images)}}" alt="">
 
         <input type="hidden" name="id" value="{{Auth::user()->id}}">
         <div>
@@ -38,7 +38,7 @@
         </div>
         <!-- <div> -->
             <div class="p_form_image_content">
-                <label for="icon_image" placeholder="ファイルを選択">アアイコン画像</label>
+                <label for="icon_image" placeholder="ファイルを選択">アイコン画像</label>
                 <label for="image" class="p_form_image">
                     <p>ファイルを選択</p>
                     <input type="file" id="image" name="icon_image">

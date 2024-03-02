@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\Http\Controllers\Validator;
 
 class UsersController extends Controller
 {
@@ -39,16 +40,20 @@ class UsersController extends Controller
         $password = $request->input('password');
         // $passwordConfirm = $request->input('password_confirm');
         $bio = $request->input('bio');
+        if($request->icon_image){
         $iconImage = $request->file('icon_image')->getClientOriginalName();
         $request->file('icon_image')->storeAs('public/images',$iconImage);
         User::where('id',$id)->update([
-            'id' => $id,
-            'username' => $username,
-            'mail' => $mail,
-            'password' => bcrypt($password),
-            'bio' => $bio,
             'images' => $iconImage,
         ]);
+        }
+            User::where('id',$id)->update([
+                'id' => $id,
+                'username' => $username,
+                'mail' => $mail,
+                'password' => bcrypt($password),
+                'bio' => $bio,
+            ]);
         return redirect('/top');
     }
     public function search(Request $request){
